@@ -10,8 +10,6 @@ class NavigationBar extends React.Component {
                 <Link to="" className="navbar-brand">
                     Navbar
                 </Link>
-                {/*<Navbar.Brand href="/">Navbar</Navbar.Brand>*/}
-
                 <Nav className="mr-auto">
                     <Link to="apartments" className="nav-link">Apartments</Link>
                 </Nav>
