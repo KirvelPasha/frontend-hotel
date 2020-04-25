@@ -26,16 +26,17 @@ class ApartmentList extends React.Component {
 
     render() {
         return (
-           <Card classname="border border-dark bg-dark text-white">
+           <Card className="border border-dark bg-dark text-white">
                <Card.Header>Apartment List</Card.Header>
                <Card.Body>
                    <Table bordered hover striped variant="dark">
                        <thead>
                        <tr>
                            <th>#</th>
-                           <th>First Name</th>
-                           <th>Last Name</th>
-                           <th>Username</th>
+                           <th>Count Rooms</th>
+                           <th>Count Places</th>
+                           <th>Price</th>
+                           <th>More</th>
                        </tr>
                        </thead>
                        <tbody>
@@ -47,8 +48,9 @@ class ApartmentList extends React.Component {
                            this.state.apartments.map((apartment) => (
                                <tr key={apartment.id}>
                                    <td>{apartment.id}</td>
-                                   <td colSpan="2">Larry the Bird</td>
-                                   <td>@twitter</td>
+                                   <td>{apartment.countRooms}</td>
+                                   <td>{apartment.countPlaces}</td>
+                                   <td>{apartment.price}</td>
                                </tr>
                                ))
                        }
