@@ -67,4 +67,4 @@ class ApartmentList extends React.Component {
     }
 }
 
-export default ApartmentList
+export default ApartmentList;

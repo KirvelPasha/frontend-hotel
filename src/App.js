@@ -24,7 +24,7 @@ function App() {
                         <Switch>
                             <Route path="/" exact component={Welcome}/>
                             <Route path="/apartments" exact component={ApartmentList}/>
-                            <Route path="/apartments/:id" render={(props) => <ApartmentDescription id=":id"/>}/>
+                            <Route path="/apartments/:id" exact render={(props) => <ApartmentDescription id=":id"/>}/>
                         </Switch>
                     </Col>
                 </Row>
