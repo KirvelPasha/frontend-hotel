@@ -1,13 +1,15 @@
 import React from 'react';
 import {withRouter} from "react-router"
 import axios from "axios";
+import CommentList from "./CommentList";
+
 
 class ApartmentDescription extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            apartment: Object
-        }
+            apartment : Object
+        };
     }
 
     componentDidMount() {
@@ -25,11 +27,12 @@ class ApartmentDescription extends React.Component {
 
     render() {
         return (
-            <div className="bg-dark text-white">
-                <h1>{this.state.apartment.id}</h1>
-            </div>
-
-        );
+                <div>
+                    <h1 >{this.state.apartment.id}</h1>
+                    <h1 >{this.state.apartment.id}</h1>
+                    <CommentList test={this.state.apartment.id}/>
+                </div>
+            );
     }
 }
 

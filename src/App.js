@@ -8,7 +8,7 @@ import NavigationBar from './components/NavigationBar'
 import Welcome from './components/Welcome'
 import ApartmentList from "./components/ApartmentList";
 import ApartmentDescription from "./components/ApartmentDescription";
-
+import CommentList from "./components/CommentList";
 function App() {
 
     const marginTop = {
@@ -25,6 +25,7 @@ function App() {
                             <Route path="/" exact component={Welcome}/>
                             <Route path="/apartments" exact component={ApartmentList}/>
                             <Route path="/apartments/:id" exact render={(props) => <ApartmentDescription id=":id"/>}/>
+                            <Route path="/apartments/:id"  exact component={CommentList}/>
                         </Switch>
                     </Col>
                 </Row>
