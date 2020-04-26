@@ -7,7 +7,7 @@ class CommentList extends React.Component {
         return (
             <Card>
                 <Card.Body>
-                    {this.props.test}
+                    {this.props.comments}
                 </Card.Body>
             </Card>
         );

@@ -9,6 +9,7 @@ import Welcome from './components/Welcome'
 import ApartmentList from "./components/ApartmentList";
 import ApartmentDescription from "./components/ApartmentDescription";
 import CommentList from "./components/CommentList";
+import Join from "./components/Join";
 function App() {
 
     const marginTop = {
@@ -26,6 +27,7 @@ function App() {
                             <Route path="/apartments" exact component={ApartmentList}/>
                             <Route path="/apartments/:id" exact render={(props) => <ApartmentDescription id=":id"/>}/>
                             <Route path="/apartments/:id"  exact component={CommentList}/>
+                            <Route path="/join" exact component={Join}/>
                         </Switch>
                     </Col>
                 </Row>

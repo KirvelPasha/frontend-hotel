@@ -29,8 +29,7 @@ class ApartmentDescription extends React.Component {
         return (
                 <div>
                     <h1 >{this.state.apartment.id}</h1>
-                    <h1 >{this.state.apartment.id}</h1>
-                    <CommentList test={this.state.apartment.id}/>
+                    <CommentList comments={this.state.apartment.id}/>
                 </div>
             );
     }
