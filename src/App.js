@@ -7,6 +7,7 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import NavigationBar from './components/NavigationBar'
 import Welcome from './components/Welcome'
 import ApartmentList from "./components/ApartmentList";
+import ApartmentDescription from "./components/ApartmentDescription";
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
                         <Switch>
                             <Route path="/" exact component={Welcome}/>
                             <Route path="/apartments" exact component={ApartmentList}/>
+                            <Route path="/apartments/:id" render={(props) => <ApartmentDescription id=":id"/>}/>
                         </Switch>
                     </Col>
                 </Row>

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {Card, Table} from 'react-bootstrap';
+import {Link} from "react-router-dom"
 import axios from 'axios';
 
 class ApartmentList extends React.Component {
@@ -44,6 +45,9 @@ class ApartmentList extends React.Component {
                            this.state.apartments.length === 0 ?
                                <tr align="center">
                                    <td colSpan="6">No Apartments</td>
+                                   <td>
+                                       <Link to="/apartments/1" className="nav-link">Read</Link>
+                                   </td>
                                </tr>:
                            this.state.apartments.map((apartment) => (
                                <tr key={apartment.id}>
@@ -51,6 +55,7 @@ class ApartmentList extends React.Component {
                                    <td>{apartment.countRooms}</td>
                                    <td>{apartment.countPlaces}</td>
                                    <td>{apartment.price}</td>
+
                                </tr>
                                ))
                        }
