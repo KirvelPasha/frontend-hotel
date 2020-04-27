@@ -2,6 +2,7 @@ import React from 'react';
 import {withRouter} from "react-router"
 import axios from "axios";
 import CommentList from "./CommentList";
+import CommentAdd from "./CommentAdd";
 
 
 class ApartmentDescription extends React.Component {
@@ -30,6 +31,7 @@ class ApartmentDescription extends React.Component {
             <div>
                 <h1>{this.state.apartment.id}</h1>
                 <CommentList apartmentId={this.state.apartment.id} comments={this.state.apartment.id}/>
+                <CommentAdd apartmentId={this.state.apartment.id}/>
             </div>
         );
     }

@@ -1,11 +1,15 @@
 import React from 'react';
-import CommentAdd from "./CommentAdd";
+import {Card} from 'react-bootstrap';
 
 class CommentList extends React.Component {
 
     render() {
         return (
-            <CommentAdd apartmentId={this.props.apartmentId}/>
+            <Card>
+                <Card.Body>
+                    {this.props.comments}
+                </Card.Body>
+            </Card>
         );
     }
 }
