@@ -27,7 +27,9 @@ class Join extends React.Component {
         e.preventDefault();
         console.log(this.state);
         axios.post('http://localhost:8081/person', this.state)
-
+             .then(() => {
+                this.props.history.push('/login')
+            })
     };
 
     render() {
