@@ -8,15 +8,18 @@ class Join extends React.Component {
         super(props);
         this.state = {
             name: '',
-            surname: ''
-
+            surname: '',
+            email: '',
+            password: ''
         }
     }
 
     handleChange = e => {
         this.setState({
             name: e.target.value,
-            surname: e.target.value
+            surname: e.target.value,
+            email: e.target.value,
+            password: e.target.value
         })
     };
 
@@ -30,10 +33,20 @@ class Join extends React.Component {
     render() {
         return (
             <Form onSubmit={this.handleSubmit}>
-                <Form.Group controlId="formGroupEmail">
+                <Form.Group controlId="formGroupName">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" name="email" autoComplete="off"
+                    <Form.Control type="name" placeholder="Enter name" name="name" autoComplete="off"
                                   onChange={this.handleChange}/>
+                </Form.Group>
+                <Form.Group controlId="formGroupSurname">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control type="surname" placeholder="Enter surname" name="surname" autoComplete="off"
+                                  onChange={this.handleChange}/>
+                    <Form.Group controlId="formGroupEmail">
+                        <Form.Label>Email address</Form.Label>
+                        <Form.Control type="email" placeholder="Enter email" name="email" autoComplete="off"
+                                      onChange={this.handleChange}/>
+                    </Form.Group>
                 </Form.Group>
                 <Form.Group controlId="formGroupPassword">
                     <Form.Label>Password</Form.Label>
