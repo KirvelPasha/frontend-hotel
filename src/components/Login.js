@@ -28,14 +28,14 @@ class Login extends React.Component {
 
     render() {
         return (
-            <Form onSubmit={this.handleSubmit}>
+            <Form onSubmit={this.handleSubmi}>
                 <Form.Group controlId="formGroupLogin">
-                    <Form.Label>Login</Form.Label>
+                    <Form.Label className="text-white">Login</Form.Label>
                     <Form.Control type="login" placeholder="Login" name="login" autoComplete="off"
                                   onChange={this.handleChange}/>
                 </Form.Group>
                 <Form.Group controlId="formGroupPassword">
-                    <Form.Label>Password</Form.Label>
+                    <Form.Label className="text-white">Password</Form.Label>
                     <Form.Control type="password" placeholder="Password" name="password" autoComplete="off"
                                   onChange={this.handleChange}/>
                 </Form.Group>
