@@ -22,8 +22,7 @@ class Login extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
         console.log(this.state);
-        axios.post('http://localhost:8081/person', this.state)
-
+        axios.post('http://localhost:8081/person', this.state);
     };
 
     render() {

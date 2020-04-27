@@ -20,18 +20,26 @@ class CommentAdd extends React.Component {
         })
     };
 
+    reset = () => {
+        this.setState( {
+            comment: ''
+        })
+    };
+
     handleSubmit = e => {
         e.preventDefault();
         console.log(this.state);
         axios.post('http://localhost:8081/comments', this.state);
+        this.reset();
     };
 
     render() {
+        const comment = this.state.comment;
         return (
             <Form className="my-4" onSubmit={this.handleSubmit}>
                 <Form.Group controlId="formGroupLogin">
-                    <Form.Control type="comment" name="comment" autoComplete="off"
-                                  onChange={this.handleChange}/>
+                    <Form.Control type="comment" name="comment" value={comment}
+                                  autoComplete="off" onChange={this.handleChange}/>
                 </Form.Group>
                 <Button variant="primary" type="submit">
                     Add
