@@ -1,22 +1,21 @@
-import React from "react";
-
+import React from 'react';
 import {Button, Form} from "react-bootstrap";
 import axios from 'axios';
 
-class Join extends React.Component {
+class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: '',
-            surname: ''
+            login: '',
+            password: ''
 
         }
     }
 
     handleChange = e => {
         this.setState({
-            name: e.target.value,
-            surname: e.target.value
+            login: e.target.value,
+            password: e.target.value
         })
     };
 
@@ -30,9 +29,9 @@ class Join extends React.Component {
     render() {
         return (
             <Form onSubmit={this.handleSubmit}>
-                <Form.Group controlId="formGroupEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" name="email" autoComplete="off"
+                <Form.Group controlId="formGroupLogin">
+                    <Form.Label>Login</Form.Label>
+                    <Form.Control type="login" placeholder="Login" name="login" autoComplete="off"
                                   onChange={this.handleChange}/>
                 </Form.Group>
                 <Form.Group controlId="formGroupPassword">
@@ -41,11 +40,11 @@ class Join extends React.Component {
                                   onChange={this.handleChange}/>
                 </Form.Group>
                 <Button variant="primary" type="submit">
-                    Create account
+                    Sign in
                 </Button>
             </Form>
         )
     }
 }
 
-export default Join;
+export default Login;

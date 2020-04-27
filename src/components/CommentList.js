@@ -12,7 +12,6 @@ class CommentList extends React.Component {
             </Card>
         );
     }
-
 }
 
 export default CommentList;

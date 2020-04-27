@@ -8,7 +8,7 @@ class ApartmentDescription extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            apartment : Object
+            apartment: Object
         };
     }
 
@@ -27,11 +27,11 @@ class ApartmentDescription extends React.Component {
 
     render() {
         return (
-                <div>
-                    <h1 >{this.state.apartment.id}</h1>
-                    <CommentList comments={this.state.apartment.id}/>
-                </div>
-            );
+            <div>
+                <h1>{this.state.apartment.id}</h1>
+                <CommentList comments={this.state.apartment.id}/>
+            </div>
+        );
     }
 }
 
