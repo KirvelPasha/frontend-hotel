@@ -2,6 +2,7 @@ import React from "react";
 
 import {Button, Form} from "react-bootstrap";
 import axios from 'axios';
+import './Join.css';
 
 class Join extends React.Component {
     PERSON_API_URL = 'http://localhost:8081/person';
@@ -38,7 +39,9 @@ class Join extends React.Component {
 
     render() {
         return (
-            <Form onSubmit={this.handleSubmit}>
+            <Form className="main">
+                <h2>Sign Up</h2>
+            <Form className="joinForm" onSubmit={this.handleSubmit}>
                 <Form.Group controlId="formGroupName">
                     <Form.Label className="text-white">Name</Form.Label>
                     <Form.Control type="name" placeholder="Enter name" name="name" autoComplete="off"
@@ -48,6 +51,7 @@ class Join extends React.Component {
                     <Form.Label className="text-white">Surname</Form.Label>
                     <Form.Control type="surname" placeholder="Enter surname" name="surname" autoComplete="off"
                                   onChange={this.handleChange}/>
+                </Form.Group>
                     <Form.Group controlId="formGroupEmail">
                         <Form.Label className="text-white">Email address</Form.Label>
                         <Form.Control type="email" placeholder="Enter email" name="email" autoComplete="off"
@@ -58,7 +62,6 @@ class Join extends React.Component {
                         <Form.Control type="login" placeholder="login" name="login" autoComplete="off"
                                       onChange={this.handleChange}/>
                     </Form.Group>
-                </Form.Group>
                 <Form.Group controlId="formGroupPassword">
                     <Form.Label className="text-white">Password</Form.Label>
                     <Form.Control type="password" placeholder="Password" name="password" autoComplete="off"
@@ -67,6 +70,7 @@ class Join extends React.Component {
                 <Button variant="primary" type="submit">
                     Create account
                 </Button>
+            </Form>
             </Form>
         )
     }
