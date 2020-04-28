@@ -4,6 +4,8 @@ import axios from 'axios';
 
 
 class CommentAdd extends React.Component {
+    COMMENT_API_URL = 'http://localhost:8081/comments';
+
     constructor(props) {
         super(props);
         this.state = {
@@ -21,7 +23,7 @@ class CommentAdd extends React.Component {
     };
 
     reset = () => {
-        this.setState( {
+        this.setState({
             comment: ''
         })
     };
@@ -29,7 +31,7 @@ class CommentAdd extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
         console.log(this.state);
-        axios.post('http://localhost:8081/comments', this.state);
+        axios.post(this.COMMENT_API_URL, this.state);
         this.reset();
     };
 

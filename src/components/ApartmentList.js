@@ -5,6 +5,8 @@ import {Link} from "react-router-dom"
 import axios from 'axios';
 
 class ApartmentList extends React.Component {
+    APARTMENT_API_URL = 'http://localhost:8081/apartments';
+
     constructor(props) {
         super(props);
         this.state = {
@@ -18,7 +20,7 @@ class ApartmentList extends React.Component {
     }
 
     getApartments() {
-        axios.get("http://localhost:8081/apartments")
+        axios.get(this.APARTMENT_API_URL)
             .then(response => response.data)
             .then((data) => {
                 this.setState({apartments: data})

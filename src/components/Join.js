@@ -4,6 +4,8 @@ import {Button, Form} from "react-bootstrap";
 import axios from 'axios';
 
 class Join extends React.Component {
+    PERSON_API_URL = 'http://localhost:8081/person';
+
     constructor(props) {
         super(props);
         this.state = {
@@ -28,8 +30,8 @@ class Join extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
         console.log(this.state);
-        axios.post('http://localhost:8081/person', this.state)
-             .then(() => {
+        axios.post(this.PERSON_API_URL, this.state)
+            .then(() => {
                 this.props.history.push('/login')
             })
     };
