@@ -1,6 +1,7 @@
 import React from 'react';
 import {Button, Form} from "react-bootstrap";
 import axios from 'axios';
+import './Login.css';
 
 class Login extends React.Component {
     PERSON_API_URL = 'http://localhost:8081/person';
@@ -29,7 +30,9 @@ class Login extends React.Component {
 
     render() {
         return (
-            <Form onSubmit={this.handleSubmi}>
+            <Form className="mainLogin">
+                <h2>Sign In</h2>
+            <Form className="loginForm" onSubmit={this.handleSubmi}>
                 <Form.Group controlId="formGroupLogin">
                     <Form.Label className="text-white">Login</Form.Label>
                     <Form.Control type="login" placeholder="Login" name="login" autoComplete="off"
@@ -43,6 +46,7 @@ class Login extends React.Component {
                 <Button variant="primary" type="submit">
                     Sign in
                 </Button>
+            </Form>
             </Form>
         )
     }
