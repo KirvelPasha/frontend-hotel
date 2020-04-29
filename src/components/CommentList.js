@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import {Table} from 'react-bootstrap'
+import {Link} from "react-router-dom";
 
 class CommentList extends React.Component {
     COMMENT_API_URL = 'http://localhost:8081/comments/';
@@ -33,6 +34,23 @@ class CommentList extends React.Component {
                 </tr>
                 </thead>
                 <tbody>
+                {
+                    this.state.comments.length === 0 ?
+                        <tr align="center">
+                            <td colSpan="6">No comments</td>
+                        </tr> :
+                        this.state.comments.map((comment) => (
+                            <tr key={comment.id}>
+                                <td>{comment.id}</td>
+                                <td>{comment.comment}</td>
+                                <td>{comment.apartmentId}</td>
+                                <td>{comment.personId}</td>
+                                <td>
+                                    <Link to={"/comments/" + comment.id} className="nav-link">Read</Link>
+                                </td>
+                            </tr>
+                        ))
+                }
                 <tr key="1">
                     <td>mbmnb</td>
                 </tr>
