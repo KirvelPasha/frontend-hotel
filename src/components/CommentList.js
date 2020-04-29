@@ -41,10 +41,7 @@ class CommentList extends React.Component {
                         </tr> :
                         this.state.comments.map((comment) => (
                             <tr key={comment.id}>
-                                <td>{comment.id}</td>
                                 <td>{comment.comment}</td>
-                                <td>{comment.apartmentId}</td>
-                                <td>{comment.personId}</td>
                                 <td>
                                     <Link to={"/comments/" + comment.id} className="nav-link">Read</Link>
                                 </td>
