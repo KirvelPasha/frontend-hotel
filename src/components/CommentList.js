@@ -30,8 +30,6 @@ class CommentList extends React.Component {
         return (
             <Table bordered hover striped variant="dark">
                 <thead>
-                <tr>
-                </tr>
                 </thead>
                 <tbody>
                 {
@@ -45,9 +43,6 @@ class CommentList extends React.Component {
                             </tr>
                         ))
                 }
-                <tr key="1">
-                    <td>mbmnb</td>
-                </tr>
                 </tbody>
             </Table>
         );

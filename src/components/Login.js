@@ -4,7 +4,7 @@ import axios from 'axios';
 import '../css/Login.css';
 
 class Login extends React.Component {
-    PERSON_API_URL = 'http://localhost:8081/person';
+    PERSON_API_URL = 'http://localhost:8081/person/login';
 
     constructor(props) {
         super(props);
@@ -25,14 +25,21 @@ class Login extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
         console.log(this.state);
-        axios.post(this.PERSON_API_URL, this.state);
+        axios.post(this.PERSON_API_URL, this.state)
+            .then(response => response.data)
+            .then((data) => {
+                alert.success(data);
+            })
+            .catch((reason) => {
+                alert("No such person");
+            } )
     };
 
     render() {
         return (
             <Form className="mainLogin">
                 <h2>Sign In</h2>
-            <Form className="loginForm" onSubmit={this.handleSubmi}>
+            <Form className="loginForm" onSubmit={this.handleSubmit}>
                 <Form.Group controlId="formGroupLogin">
                     <Form.Label className="text-white">Login</Form.Label>
                     <Form.Control type="login" placeholder="Login" name="login" autoComplete="off"
