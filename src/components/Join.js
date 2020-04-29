@@ -2,7 +2,7 @@ import React from "react";
 
 import {Button, Form} from "react-bootstrap";
 import axios from 'axios';
-import './Join.css';
+import '../css/Join.css';
 
 class Join extends React.Component {
     PERSON_API_URL = 'http://localhost:8081/person';

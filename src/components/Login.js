@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button, Form} from "react-bootstrap";
 import axios from 'axios';
-import './Login.css';
+import '../css/Login.css';
 
 class Login extends React.Component {
     PERSON_API_URL = 'http://localhost:8081/person';
