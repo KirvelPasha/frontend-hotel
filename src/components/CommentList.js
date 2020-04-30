@@ -1,10 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 import {Table} from 'react-bootstrap'
-import {Link} from "react-router-dom";
 
 class CommentList extends React.Component {
-    COMMENT_API_URL = 'http://localhost:8081/comments/';
+    COMMENT_API_URL = 'http://localhost:8081/comments/filter?apartmentId=';
     constructor(props) {
         super(props);
         this.state = {
