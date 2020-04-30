@@ -1,5 +1,5 @@
 import React from 'react';
-import {withRouter} from "react-router"
+import {withRouter} from "react-router";
 import axios from "axios";
 import CommentList from "./CommentList";
 import CommentAdd from "./CommentAdd";
@@ -19,8 +19,8 @@ class ApartmentDescription extends React.Component {
     }
 
     getApartment() {
-        let id = this.props.match.params.id;
-        axios.get(this.APARTMENT_API_URL + id)
+        let apartmentId = this.props.match.params.id;
+        axios.get(this.APARTMENT_API_URL + apartmentId)
             .then(response => response.data)
             .then((data) => {
                 this.setState({apartment: data})
@@ -31,8 +31,8 @@ class ApartmentDescription extends React.Component {
         return (
             <div>
                 <h1>{this.state.apartment.id}</h1>
-                <CommentList apartmentId={this.state.apartment.id}/>
-                <CommentAdd apartmentId={this.state.apartment.id}/>
+                <CommentList/>
+                <CommentAdd/>
             </div>
         );
     }

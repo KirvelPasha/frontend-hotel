@@ -1,4 +1,5 @@
 import React from 'react';
+import {withRouter} from 'react-router';
 import axios from 'axios';
 import {Table} from 'react-bootstrap'
 
@@ -16,8 +17,7 @@ class CommentList extends React.Component {
     }
 
     getComments() {
-        let apartmentId = this.props.apartmentId;
-        console.log(apartmentId);
+        let apartmentId = this.props.match.params.id;
         axios.get(this.COMMENT_API_URL + apartmentId)
             .then(response => response.data)
             .then((data) => {
@@ -48,4 +48,4 @@ class CommentList extends React.Component {
     }
 }
 
-export default CommentList;
+export default withRouter(CommentList);

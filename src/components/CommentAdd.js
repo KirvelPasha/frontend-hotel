@@ -1,5 +1,6 @@
 import React from 'react';
 import {Button, Form} from 'react-bootstrap';
+import {withRouter} from 'react-router';
 import axios from 'axios';
 
 
@@ -18,7 +19,7 @@ class CommentAdd extends React.Component {
     handleChange = e => {
         this.setState({
             comment: e.target.value,
-            apartmentId: this.props.apartmentId
+            apartmentId: this.props.match.params.id
         })
     };
 
@@ -51,4 +52,4 @@ class CommentAdd extends React.Component {
     }
 }
 
-export default CommentAdd;
+export default withRouter(CommentAdd);

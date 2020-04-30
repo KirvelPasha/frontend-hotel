@@ -29,8 +29,8 @@ function App() {
                             <Route path="/" exact component={Welcome}/>
                             <Route path="/apartments" exact component={ApartmentList}/>
                             <Route path="/apartments/:id" exact render={(props) => <ApartmentDescription id=":id"/>}/>
-                            <Route path="/apartments/:id" exact component={CommentList}/>
-                            <Route path="/apartments/:id" component={CommentAdd}/>
+                            <Route path="/apartments/:id" exact render={(props) => <CommentList id=":id"/>}/>
+                            <Route path="/apartments/:id" exact render={(props) => <CommentAdd id=":id"/>}/>
                             <Route path="/login" exact component={Login}/>
                             <Route path="/join" exact component={Join}/>
                         </Switch>
