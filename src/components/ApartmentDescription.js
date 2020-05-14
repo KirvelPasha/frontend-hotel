@@ -30,7 +30,6 @@ class ApartmentDescription extends React.Component {
     render() {
         return (
             <div>
-                <h1>{this.state.apartment.id}</h1>
                 <CommentList/>
                 <CommentAdd/>
             </div>
