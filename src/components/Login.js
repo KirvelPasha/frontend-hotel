@@ -15,9 +15,15 @@ class Login extends React.Component {
         }
     }
 
-    handleChange = e => {
+    handleLoginChange = e => {
         this.setState({
-            login: e.target.value,
+            login: e.target.value
+        })
+    };
+
+
+    handlePasswordChange = e => {
+        this.setState({
             password: e.target.value
         })
     };
@@ -43,12 +49,12 @@ class Login extends React.Component {
                 <Form.Group controlId="formGroupLogin">
                     <Form.Label className="text-white">Login</Form.Label>
                     <Form.Control type="login" placeholder="Login" name="login" autoComplete="off"
-                                  onChange={this.handleChange}/>
+                                  onChange={this.handleLoginChange}/>
                 </Form.Group>
                 <Form.Group controlId="formGroupPassword">
                     <Form.Label className="text-white">Password</Form.Label>
                     <Form.Control type="password" placeholder="Password" name="password" autoComplete="off"
-                                  onChange={this.handleChange}/>
+                                  onChange={this.handlePasswordChange}/>
                 </Form.Group>
                 <Button variant="primary" type="submit">
                     Sign in
