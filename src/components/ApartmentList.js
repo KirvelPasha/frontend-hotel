@@ -3,6 +3,7 @@ import React from 'react';
 import {Card, Table} from 'react-bootstrap';
 import {Link} from "react-router-dom"
 import axios from 'axios';
+import { withRouter } from 'react-router';
 import NavigationBar from "./NavigationBar";
 
 class ApartmentList extends React.Component {
@@ -16,7 +17,6 @@ class ApartmentList extends React.Component {
     }
 
     componentDidMount() {
-        localStorage.setItem("user", "test");
         this.getApartments();
     }
 
@@ -69,4 +69,4 @@ class ApartmentList extends React.Component {
     }
 }
 
-export default ApartmentList;
+export default withRouter(ApartmentList);

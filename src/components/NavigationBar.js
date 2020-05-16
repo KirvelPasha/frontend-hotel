@@ -1,9 +1,23 @@
 import React from 'react';
 
-import {Nav, Navbar} from "react-bootstrap";
-import {Link} from "react-router-dom"
+import { Nav, Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom"
 
 class NavigationBar extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            logState: false,
+        };
+    }
+
+    handleChangeUserLogState = () => {
+        const { logState } = this.state;
+
+        this.setState({ logState: !logState });
+    }
+
     render() {
         return (
             <Navbar bg="dark" variant="dark">
@@ -16,9 +30,21 @@ class NavigationBar extends React.Component {
                 <Nav className="align-items-end">
                     {
                         localStorage.getItem("user") === null ?
-                        < Link to="/login" className="mr-sm-2">Sign In</Link>
+                            (
+                                <Link to="/login"
+                                      onClick={this.handleChangeUserLogState}
+                                      className="mr-sm-2">
+                                    Sign In
+                                </Link>
+                            )
                             :
-                            < Link to="/logout" className="mr-sm-2">Log out</Link>
+                            (
+                                <Link to="/logout"
+                                      onClick={this.handleChangeUserLogState}
+                                      className="mr-sm-2">
+                                    Log out
+                                </Link>
+                            )
 
                     }
                     <Link to="/join">Sign Up</Link>

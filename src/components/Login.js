@@ -41,7 +41,7 @@ class Login extends React.Component {
         axios.post(this.PERSON_API_URL, this.state)
             .then(response => response.data)
             .then((data) => {
-                // localStorage.setItem("user", data);
+                localStorage.setItem("user", data);
                 alert.success(data);
             })
             .catch((reason) => {
