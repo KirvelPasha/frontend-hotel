@@ -14,7 +14,13 @@ class NavigationBar extends React.Component {
                     <Link to="/apartments" className="nav-link">Apartments</Link>
                 </Nav>
                 <Nav className="align-items-end">
-                    <Link to="/login" className="mr-sm-2">Sign In</Link>
+                    {
+                        localStorage.getItem("user") === null ?
+                        < Link to="/login" className="mr-sm-2">Sign In</Link>
+                            :
+                            < Link to="/logout" className="mr-sm-2">Log out</Link>
+
+                    }
                     <Link to="/join">Sign Up</Link>
                 </Nav>
             </Navbar>

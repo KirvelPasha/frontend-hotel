@@ -12,6 +12,7 @@ import CommentList from './components/CommentList';
 import Login from './components/Login';
 import Join from './components/Join';
 import CommentAdd from "./components/CommentAdd";
+import SignOut from './components/SignOut';
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
                             <Route path="/apartments/:id" exact render={(props) => <CommentAdd id=":id"/>}/>
                             <Route path="/login" exact component={Login}/>
                             <Route path="/join" exact component={Join}/>
+                            <Route path="/logout" component={SignOut}/>
                         </Switch>
                     </Col>
                 </Row>

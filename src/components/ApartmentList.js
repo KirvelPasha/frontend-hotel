@@ -3,6 +3,7 @@ import React from 'react';
 import {Card, Table} from 'react-bootstrap';
 import {Link} from "react-router-dom"
 import axios from 'axios';
+import NavigationBar from "./NavigationBar";
 
 class ApartmentList extends React.Component {
     APARTMENT_API_URL = 'http://localhost:8081/apartments';
@@ -15,8 +16,8 @@ class ApartmentList extends React.Component {
     }
 
     componentDidMount() {
+        localStorage.setItem("user", "test");
         this.getApartments();
-
     }
 
     getApartments() {
